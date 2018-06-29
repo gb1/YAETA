@@ -1,0 +1,33 @@
+<h1>Total spent so far! 😱🙈 £<%= @total %></h1>
+
+<span><%= link "New Expense", to: expense_path(@conn, :new), class: "btn btn-default btn-xl" %></span>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Day</th>
+      <th>Category</th>
+      <th>Amount</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for expense <- @expenses do %>
+    <tr>
+      <td><%= expense.description %></td>
+      <td><%= Timex.format!(expense.updated_at, "{ANSIC}") %></td>
+      <td><%= expense.category %></td>
+      <td>£<%= expense.amount %></td>
+
+      <td class="text-right">
+        <span><%= link "Edit", to: expense_path(@conn, :edit, expense), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: expense_path(@conn, :delete, expense), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
