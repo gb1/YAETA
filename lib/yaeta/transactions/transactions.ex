@@ -19,7 +19,8 @@ defmodule Yaeta.Transactions do
 
   """
   def list_expenses do
-    Repo.all(Expense)
+    query = from(e in Expense, order_by: [desc: e.updated_at])
+    Repo.all(query)
   end
 
   @doc """

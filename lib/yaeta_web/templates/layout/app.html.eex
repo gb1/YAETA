@@ -10,6 +10,16 @@
     <title>Hello Yaeta!</title>
     <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Expenses">
+    <meta name="apple-mobile-web-app-title" content="Expenses">
+    <meta name="msapplication-starturl" content="http://35.227.49.89/app">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   </head>
 
   <body>

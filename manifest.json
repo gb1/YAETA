@@ -1,0 +1,7 @@
+{
+    "name": "Expense Tracker",
+    "short_name": "Expenses",
+    "lang": "en-GB",
+    "start_url": "http://35.227.49.89/app",
+    "display": "standalone"
+  }

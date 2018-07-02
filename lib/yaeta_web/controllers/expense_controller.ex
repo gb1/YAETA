@@ -8,7 +8,7 @@ defmodule YaetaWeb.ExpenseController do
     expenses = Transactions.list_expenses()
 
     total = expenses
-    |> Enum.reduce(0, fn(x, acc) -> acc + Decimal.to_float(x.amount) end )
+    |> Enum.reduce(Decimal.new(0), fn(x, acc) -> Decimal.add(acc, x.amount) end )
 
     render(conn, "index.html", expenses: expenses, total: total)
   end
