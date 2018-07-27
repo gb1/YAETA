@@ -1,7 +1,7 @@
 <h1>Total spent so far! 😱🙈 £<%= @total %></h1>
 
 <span><%= link "New Expense", to: expense_path(@conn, :new), class: "btn btn-default btn-xl" %></span>
-
+<span><%= link "Export", to: export_path(@conn, :export), class: "btn btn-default btn-xl" %></span>
 <table class="table">
   <thead>
     <tr>

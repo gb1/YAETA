@@ -19,6 +19,7 @@ defmodule YaetaWeb.Router do
     # get "/", PageController, :index
     resources "/app", ExpenseController
     resources "/cats", CategoryController
+    get "/export", ExportController, :export
   end
 
   # Other scopes may use custom stacks.
